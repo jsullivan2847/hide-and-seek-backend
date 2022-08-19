@@ -21,7 +21,7 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 
-app.get('/scores', async (req,res) => {
+app.get('/', async (req,res) => {
     try{
         const score = await Score.find({})
         res.send(score)
