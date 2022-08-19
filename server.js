@@ -3,6 +3,7 @@ const app = express();
 const methodOverride = require('method-override')
 const mongoose = require('mongoose');
 const Score = require('./Models/Score.js')
+const cors = require('cors')
 require('dotenv').config()
 
 
@@ -20,6 +21,7 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
+app.use(cors())
 
 app.get('/', async (req,res) => {
     try{
