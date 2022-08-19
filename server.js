@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 
 app.get('/', (req,res) => {
-    res.send('hello')
+    res.send('<h1>hello</h1>')
 })
 
 app.post('/', (req,res) => {
