@@ -6,7 +6,7 @@ const Score = require('./Models/Score.js')
 require('dotenv').config()
 
 
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
@@ -39,5 +39,5 @@ app.post('/', (req,res) => {
 })
 
 app.listen(process.env.PORT || 8080, () => {
-    console.log('express is listening at port', PORT);
+    console.log('express is listening at port');
 })
