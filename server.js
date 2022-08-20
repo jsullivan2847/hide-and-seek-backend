@@ -33,11 +33,21 @@ app.get('/', async (req,res) => {
     }
 });
 
-app.post('/', (req,res) => {
-    Score.create(req.body, (error, createdScore) => {
-        res.send(createdScore)
-        console.log('score created')
-    })
+// app.post('/', aysnc (req,res) => {
+//     Score.create(req.body, (error, createdScore) => {
+//         res.send(createdScore)
+//         console.log('score created')
+//     })
+// })
+
+app.post('/', async (req,res) => {
+    try {
+        const createdScore = await Score.create(req.body)
+        res.send(createdScore);
+    } catch (err) {
+        console.log('error', error)
+        res.send({error: 'something went wrong - check network dev tools'})
+    }
 })
 
 app.listen(process.env.PORT || 8080, () => {
