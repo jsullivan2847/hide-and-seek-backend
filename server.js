@@ -35,7 +35,7 @@ app.get('/', async (req,res) => {
 
 app.post('/', (req,res) => {
     Score.create(req.body, (error, createdScore) => {
-        res.redirect('/')
+        res.send(createdScore)
         console.log('score created')
     })
 })
