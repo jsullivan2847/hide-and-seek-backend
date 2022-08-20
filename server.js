@@ -19,9 +19,10 @@ db.on('connected', () => console.log('mongo connected'))
 db.on('disconnected', () => console.log('mongo disconnected'))
 
 
-app.use(express.urlencoded({extended:true}));
+// app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use(cors())
+app.use(express.json())
 
 app.get('/', async (req,res) => {
     try{
