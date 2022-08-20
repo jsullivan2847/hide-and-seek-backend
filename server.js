@@ -40,7 +40,7 @@ app.get('/', async (req,res) => {
 //     })
 // })
 
-app.post('/', async (req,res) => {
+app.post('/create', async (req,res) => {
     try {
         const createdScore = await Score.create(req.body)
         res.send(createdScore);
@@ -51,5 +51,5 @@ app.post('/', async (req,res) => {
 })
 
 app.listen(process.env.PORT || 8080, () => {
-    console.log('express is listening at port');
+    console.log('express is lgistening at port');
 })
